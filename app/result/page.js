@@ -1,39 +1,37 @@
 'use client'
 import Link from 'next/link';
-import { useEffect, useState } from "react"
-import { useRouter, useSearchParams } from 'next/navigation';
-import { Container, Box, Grid, Card, CardContent, Typography, Button, CircularProgress } from "@mui/material";
+import { useEffect, useState } from "react";
+import {  useSearchParams } from 'next/navigation';
+import { Container, Box, Typography, Button, CircularProgress } from "@mui/material";
 
 const ResultPage = () => {
-    const router = useRouter()
-    const searchParams = useSearchParams()
-    const sessionid = searchParams.get('session_id')
-    const [loading, setLoading] = useState(true)
-    const [session, setSession] = useState(null)
-    const [error, setError] = useState(null)
+    const searchParams = useSearchParams();
+    const sessionid = searchParams.get('session_id');
+    const [loading, setLoading] = useState(true);
+    const [session, setSession] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchcheckoutSesssion = async () => {
-            if (!sessionid) return
+        const fetchcheckoutSession = async () => {
+            if (!sessionid) return;
             try {
-                const res = await fetch(`/api/checkout_session? session_id=${session_id}`)
-                const sessionData = await res.json()
+                console.log('Session ID:', sessionid); // Log for debugging
+                const res = await fetch(`/api/checkout_session?session_id=${sessionid}`);
+                const sessionData = await res.json();
                 if (res.ok) {
-                    setSession(sessionData)
+                    setSession(sessionData);
+                } else {
+                    setError(sessionData.error || 'An error occurred');
                 }
-                else {
-                    setError(sessionData.error)
-                }
+            } catch (err) {
+                setError('An error occurred');
+            } finally {
+                setLoading(false);
             }
-            catch (err) {
-                setError("error occured")
-            }
-            finally {
-                setLoading(false)
-            }
-        }
-        fetchcheckoutSesssion()
-    }, [sessionid])
+        };
+        fetchcheckoutSession();
+    }, [sessionid]);
+
     if (loading) {
         return (
             <Container maxWidth="sm" sx={{ textAlign: 'center', mt: 4 }}>
@@ -42,8 +40,9 @@ const ResultPage = () => {
                     Loading...
                 </Typography>
             </Container>
-        )
+        );
     }
+
     if (error) {
         return (
             <Container maxWidth="sm" sx={{ textAlign: 'center', mt: 4 }}>
