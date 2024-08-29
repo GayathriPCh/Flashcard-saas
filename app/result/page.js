@@ -1,10 +1,8 @@
 'use client'
 import Link from 'next/link';
 import { useEffect, useState } from "react"
-import { db } from "@/firebase"
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Container, Box, Grid, Card, CardContent, Typography, Button, CircularProgress } from "@mui/material";
-import getStripe from "@/utils/get-stripe";
 
 const ResultPage = () => {
     const router = useRouter()

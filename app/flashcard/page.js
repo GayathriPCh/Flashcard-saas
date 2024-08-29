@@ -1,9 +1,9 @@
 'use client';
 
-import { Container, Card, Grid, toggleFlip, TextField, Typography, Box, Button, CardActionArea, CardContent, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
-import { doc, collection, getDoc, getDocs } from "firebase/firestore";
+import { Container, Card, Grid,   Typography, Box,  CardActionArea, CardContent } from "@mui/material";
+import { doc, collection,  getDocs } from "firebase/firestore";
 import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import {  useSearchParams } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { db } from "@/firebase";
 
