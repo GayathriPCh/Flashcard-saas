@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Ankh Sanctuary';
+    src: url('./AnkhSanctuary-PVK0B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Panforte';
+    src: url('./PanforteProBold-R2M3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Panforte', sans-serif;
+  }
+  
