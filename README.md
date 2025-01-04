@@ -41,8 +41,8 @@ Before running the project, ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/cardify.git
-   cd cardify
+   git clone https://github.com/GayathriPCh/Flashcard-saas.git
+   cd Flashcard-saas
    ```
 
 2. Install dependencies:
