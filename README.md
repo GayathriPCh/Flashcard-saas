@@ -1,6 +1,8 @@
 # Cardify
 
 Cardify is a Flashcard SaaS application built with modern web technologies to enhance learning and memory retention through customizable flashcards. With features like AI-generated content, user authentication, and secure payments, Cardify is a comprehensive tool for learners and educators.
+![image](https://github.com/user-attachments/assets/fac7e739-6c88-415a-bf36-c92b4ea42f22)
+
 ## Demo Video
 
 Watch the demo video below to learn more about Cardify:
